@@ -1,0 +1,42 @@
+[project]
+name = "genai-project"
+version = "0.1.0"
+description = "YouTube video compliance auditing with Azure AI and LangGraph"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "azure-identity>=1.27.0",
+    "azure-monitor-opentelemetry>=1.8.12",
+    "azure-search-documents>=12.1.0",
+    "fastapi>=0.165.0",
+    "langchain>=1.5.2",
+    "langchain-community>=0.4.2",
+    "langchain-openai>=1.8.5",
+    "langchain-text-splitters>=1.2.0",
+    "langgraph>=1.2.24",
+    "openai>=3.57.0",
+    "pydantic>=2.14.4",
+    "pypdf>=7.1.1",
+    "python-dotenv>=1.2.4",
+    "requests>=2.34.2",
+    "uvicorn>=0.54.0",
+    "yt-dlp>=2026.10.26",
+]
+
+[project.scripts]
+genai-project = "backend:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "backend"
+module-root = "."
+source-exclude = ["backend/tests/**", ".env", ".env.*"]
+wheel-exclude = ["backend/tests/**", ".env", ".env.*"]
+
+[dependency-groups]
+dev = [
+    "pipreqs>=0.5.0",
+]

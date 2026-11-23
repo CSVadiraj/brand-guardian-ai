@@ -1,0 +1,11 @@
+azure_storage==0.37.0
+fastapi==0.165.0
+langchain_community==0.4.2
+langchain_core==1.8.4
+langchain_openai==1.8.5
+langchain_text_splitters==1.2.0
+langgraph==1.2.24
+pydantic==2.14.4
+python-dotenv==1.2.4
+Requests==2.34.2
+yt_dlp==2026.10.26
